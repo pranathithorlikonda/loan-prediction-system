@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body style="background: linear-gradient(to right, #4facfe, #00f2fe);">
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-4 rounded-4">
+
+        <h2 class="text-center text-primary mb-4">💰 Loan Risk Prediction</h2>
+
+        <form method="post" action="/predict/">
+            {% csrf_token %}
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>Name</label>
+                    {{ form.name }}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Dependents</label>
+                    {{ form.no_of_dependents }}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Education</label>
+                    {{ form.education }}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Self Employed</label>
+                    {{ form.self_employed }}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Income</label>
+                    {{ form.income_annum }}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Loan Amount</label>
+                    {{ form.loan_amount }}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Loan Term</label>
+                    {{ form.loan_term }}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>CIBIL Score</label>
+                    {{ form.cibil_score }}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Residential Assets</label>
+                    {{ form.residential_assets_value }}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Commercial Assets</label>
+                    {{ form.commercial_assets_value }}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Luxury Assets</label>
+                    {{ form.luxury_assets_value }}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Bank Balance</label>
+                    {{ form.bank_asset_value }}
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button class="btn btn-lg btn-primary px-5 rounded-pill shadow">
+                    🚀 Predict Loan
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>
